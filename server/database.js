@@ -12,13 +12,13 @@ exports.getLastMessages = () => {
             SELECT *
             FROM (
                      SELECT
-                         chat_messages.id AS message_id, *
+                         chat.id AS message_id, *
                      FROM
-                         chat_messages
+                         chat
                              JOIN users
-                                  ON(chat_messages.user_id = users.id)
+                                  ON(chat.user_id = users.id)
                      ORDER BY
-                         chat_messages.id DESC
+                         chat.id DESC
                      LIMIT 10
                  ) as subquery
             ORDER BY message_id ASC;
@@ -30,7 +30,7 @@ exports.addMessage = (user_id, message_text) => {
     return db.query(
         `
     INSERT INTO 
-        chat_messages
+        chat
         (user_id, message_text)
     VALUES 
         ($1,$2)
