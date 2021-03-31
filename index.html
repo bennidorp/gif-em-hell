@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <title>Gif 'em hell</title>
+    </head>
+    <body>
+        <div id="message-container"></div>
+        <form id="send-container">
+            <!--
+            <input type="text" id="message-input" />
+            <button type="submit" id="send-button">Send</button>
+            -->
+            <input type="text" id="gif-search" />
+            <button id="search-button">Search</button>
+
+            <div id="results"></div>
+        </form>
+    </body>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script
+        defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    ></script>
+    <script defer src="script.js"></script>
+</html>

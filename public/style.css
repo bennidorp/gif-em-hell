@@ -1,0 +1,50 @@
+* {
+    background-image: url("blue-gradient-minimal-abstract-19448.jpg");
+}
+
+body {
+    background: white;
+    border-radius: 10px;
+    height: 600px;
+    width: 500px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#message-container {
+    background: white;
+    width: 80%;
+    max-width: 500px;
+}
+
+#message-container div {
+    background: white;
+    padding: 5px;
+}
+
+#message-container div:nth-child(2n) {
+    background: white;
+}
+
+#send-container {
+    position: fixed;
+    padding-bottom: 30px;
+    bottom: 0;
+    background: white;
+    max-width: 500px;
+    width: 80%;
+    display: flex;
+    border-radius: 10px;
+}
+
+#message-input {
+    background: white;
+    flex-grow: 1;
+}
+
+#gif-search {
+    background: white;
+    flex-grow: 1;
+}
