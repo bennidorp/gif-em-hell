@@ -10,7 +10,7 @@ setTimeout(() => {
     const name = prompt("Please enter your name");
     appendMessage("You joined the chat");
     socket.emit("new-user", name);
-}, 1000);
+}, 700);
 
 // socket.on("chat-message", (data) => {
 //     appendMessage(`${data.name}: ${data.message}`);
@@ -47,7 +47,9 @@ function appendGif(gif) {
     const imgElement = document.createElement("img");
     imgElement.src = gif;
     messageBody.append(imgElement);
-    messageBody.scrollTop = 1000000;
+    setTimeout(() => {
+        messageBody.scrollTop = 1000000;
+    }, 500);
 }
 
 searchButton.addEventListener("click", async () => {
@@ -55,9 +57,9 @@ searchButton.addEventListener("click", async () => {
 
     const res = await axios.get("https://api.giphy.com/v1/gifs/search", {
         params: {
-            api_key: "WGFcilDHkLL3f2vgs3esFciDvoyJDIIh",
+            api_key: "NyxW6CQ2aHo036hu9Pasybcyx6KYh8Hr",
             q: gifInput.value,
-            limit: 4,
+            limit: 10,
             //offset : this.state.offset
         },
     });
@@ -71,7 +73,6 @@ searchButton.addEventListener("click", async () => {
 
 results.addEventListener("click", (event) => {
     console.log("event", event);
-
     socket.emit("gif-to-chat", event.target.currentSrc);
 });
 
