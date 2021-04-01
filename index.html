@@ -2,28 +2,35 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <title>Gif 'em hell</title>
     </head>
     <body>
-        <div id="message-container"></div>
-        <form id="send-container">
-            <!--
-            <input type="text" id="message-input" />
-            <button type="submit" id="send-button">Send</button>
-            -->
-            <input type="text" id="gif-search" />
-            <button id="search-button">Search</button>
+        <div id="content">
+            <div id="head">
+                <h1>Gif 'em hell</h1>
+                <h3>
+                    Arguably the most useful chat in the world. No Text, no
+                    emojis. Only GIF's!
+                </h3>
+            </div>
+            <div id="message-container"></div>
 
-            <div id="results"></div>
-        </form>
+            <div id="sendBox">
+                <form id="send-container">
+                    <input type="text" id="gif-search" />
+                    <button id="search-button">Search</button>
+                </form>
+            </div>
+
+            <div id="results">Pick a gif</div>
+        </div>
+
+        <p>Powered By GIPHY</p>
+
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <script src="script.js"></script>
     </body>
-
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
-    <script
-        defer
-        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    ></script>
-    <script defer src="script.js"></script>
 </html>
